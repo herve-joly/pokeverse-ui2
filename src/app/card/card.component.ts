@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-card',
@@ -9,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 
 })
 export class CardComponent {
-
+  @Input() data: any;
+  
 }
 

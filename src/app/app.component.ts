@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './functions/apiFetch'; // Import your ApiService
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokeverse-angular';
+  firstObject: any;
+
+  constructor(private apiService: ApiService) {
+    this.apiService.fetchJSONFromAPI().then((data) => {
+      this.firstObject = data[0];
+    });
+  }
 }
+
