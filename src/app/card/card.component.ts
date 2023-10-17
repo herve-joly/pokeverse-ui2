@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../pokemon.service';
 
 
 @Component({
@@ -7,8 +8,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css'],
 
 })
-export class CardComponent {
-  @Input() data: any;
-  
-}
 
+export class CardComponent implements OnInit {
+  pokemons: any[] = [];
+pokemon: any;
+
+  constructor(private PokemonService: PokemonService) {}
+
+  ngOnInit(): void {
+    this.PokemonService.getFirst150Pokemon().subscribe((data) => {
+      this.pokemons = data.results;
+    });
+  }
+}

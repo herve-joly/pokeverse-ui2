@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './pokemon.service';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,12 @@ import { CardComponent } from './card/card.component';
     MatNativeDateModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule 
+    MatCardModule ,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
