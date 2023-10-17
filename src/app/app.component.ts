@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PokemonService } from './pokemon.service'; // Import your ApiService
+
 
 @Component({
   selector: 'app-root',
